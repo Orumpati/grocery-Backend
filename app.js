@@ -10,6 +10,7 @@ const cookieParse  =require('cookie-parser')
 const bodyparser = require('body-parser');
 
 const registerdetails= require('./Routers/registerRoute.js')
+const grocery = require('./Routers/groceryRoute.js')
 
 const uri='mongodb+srv://Orumpati_1234:9705821087Sai@cluster0.uqgd1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.set("strictQuery", false);
@@ -29,7 +30,7 @@ app.use(bodyparser.json());
 
 
 app.use('/registerroute',registerdetails);
-
+app.use('/grocery',grocery)
 
 
 module.exports = app;
